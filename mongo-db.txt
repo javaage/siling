@@ -1,0 +1,125 @@
+/etc/mongod.conf
+mongod --config /etc/mongod.conf
+
+db.var_value.find({update_time:{$gt:1536076800}}).count()
+
+db.var_value.find({gateway:{$gt:'0'}}).count()
+
+
+db.var_value.find({$and:[{update_time:{$gt:1536076800}}]})
+db.var_value.find({$and:[{update_time:{$gt:1536300049}},{gateway:{$exists:true}}]})
+db.var_value.find({$and:[{update_time:{$gt:1536249600}},{gateway:{$exists:false}}]})
+
+9/5 1536076800
+9/6 1536163200
+9/7 1536249600
+gateway 
+
+location   例如：wmtgy 8+12家企业代码（唯一）
+device 例如： NN0101 一致
+parameter: 例如： 数量 状态 节拍 温度 压力 的代码
+
+value: 值
+
+{ 
+"_id" : ObjectId("5b8f9507830d92409129c9c7"),  //系统自动生成
+"gateway" : "4F58B12A270CFD7E5BE657BA4BF84AF6A1B386EC", //网关ID
+"location" : "wmtgy",  //  8+12家企业代码（唯一）
+"device" : "NN0101",   //  设备名称
+"parameter" : "n" 	   //  数量 状态 节拍 温度 压力的标识代码，由你们定义
+"value" : 3033, 
+"update_time" : 1536251604 
+}
+
+{Parameter:'test:D100'}
+{update_time:-1}
+
+mongodb://rwuser:****@192.168.1.84:8635,192.168.1.41:8635,192.168.1.148:8635/admin
+
+mongo --ssl --sslCAFile workspace/ca.pem 192.168.1.84:8635,192.168.1.41:8635,192.168.1.148:8635/admin
+
+mongo --ssl --sslCAFile workspace/ca.pem :@192.168.1.84:8635,192.168.1.41:8635,192.168.1.148:8635/admin
+
+mongo 192.168.1.84:8635/admin
+
+mongo rwuser:hupao-MONGO123@192.168.1.84:8635/admin
+
+db.auth("rwuser","hupao-MONGO123")
+db.auth("rwuser","hupao-MONGO123")
+readWrite
+
+
+#db.system.users.find().pretty()
+
+db.createUser(
+   {
+     user: "zgzz",
+     pwd: "zgzz2025",
+     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+   }
+ )
+
+ db.createUser(
+   {
+     user: "zgzz",
+     pwd: "zgzz2025",
+     roles: [ { role: "readWrite", db: "zgzz" } ]
+   }
+ )
+
+ db.createUser({user:'rwuser',pwd:'rwuser',roles:[{role:'readWrite'}]})
+
+db.updateUser("rwuser",{roles : ["readWriteAnyDatabase"]})
+
+db.createUser(
+   {
+     user: "zgzz",
+     pwd: "Zgzz_2025",
+     roles: [ { role: "readWriteAnyDatabase", db: "zgzz" } ]
+   }
+ )
+
+db.device_status.find({Location:'jxydz',log_date:'2018-09-28',status:3})
+
+db.var_value.find({Location:'jxydz',Parameter:'Status',value:3,update_time:{$gt:1538150400}})
+
+
+ 1538150400
+
+ db.students.insertMany([
+                { "_id" : 7, semester: 3, "grades" : [ { grade: 80, mean: 75, std: 8 },
+                                               { grade: 85, mean: 90, std: 5 },
+                                               { grade: 90, mean: 85, std: 3 } ] },
+            { "_id" : 8, semester: 3, "grades" : [ { grade: 92, mean: 88, std: 8 },
+                                               { grade: 78, mean: 90, std: 5 },
+                                               { grade: 88, mean: 85, std: 3 } ] }])
+
+db.students.find(
+	{ "grades.mean": { $gt: 70 } },
+	{ "grades.$": 1 }
+	)
+
+125.124.13.15 (弹性IP)20 Mbit/s
+192.168.1.242(私有)
+
+spring.data.mongodb.host=192.168.1.84
+spring.data.mongodb.port=8635
+spring.data.mongodb.username=rwuser
+spring.data.mongodb.password=hupao-MONGO123
+spring.data.mongodb.database=zgzz
+spring.data.mongodb.authenticationDatabase=admin
+
+ssh -fCNR 8635:192.168.1.84:8889 root@125.124.13.15
+
+10-6 1538755200
+10-7 1538841600
+10-8 1538928000 
+{Location:'rmdq',Device:'0101',$and:[{Parameter:'Status'},{update_time:{$gt:1538755200}},{update_time:{$lt:1538841600}},{value:1}]}
+//设备状态
+{Location:'rmdq',Device:'0101',$and:[{Parameter:'Status'},{update_time:{$gt:1538928000}},{value:1}]}
+
+3128067469
+
+mongodump -h 192.168.1.84 --port 8635 -d zgzz --authenticationDatabase=admin -u rwuser -p hupao-MONGO123 -o /root/project
+
+mongorestore -h <hostname><:port> -d dbname <path>

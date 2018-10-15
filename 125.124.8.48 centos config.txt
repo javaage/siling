@@ -1,0 +1,11 @@
+/root/project/yipt-report/dist_upload
+
+
+  server {
+        listen  8301;
+        server_name 125.124.8.48:8301;
+
+        root /root/project/yipt-report/dist_upload;
+        index index.html index.htm;
+
+    }

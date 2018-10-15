@@ -1,0 +1,16 @@
+101.201.232.22 centos config
+
+hyck145%
+
+
+修改catalina.sh
+:1,$s/CATALINA_BASE/CATALINA_BASE2/g
+:1,$s/CATALINA_HOME/CATALINA_BASE2/g
+修改 server.xml中的端口
+
+https://www.cnblogs.com/DanBrown/p/8005184.html
+CentOS6.5 下Nginx 的安装与配置
+
+nginx负载均衡
+https://www.cnblogs.com/qlqwjy/p/8536779.html
+

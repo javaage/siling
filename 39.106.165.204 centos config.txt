@@ -1,0 +1,13 @@
+39.106.165.204 centos config
+
+/usr/local/tomcat 
+
+cp -a tomcat ./tomcat1
+cp -a tomcat ./tomcat2
+cp -a tomcat ./tomcat3
+
+
+postgres 重启
+pg_ctl stop
+pg_ctl start
+pg_ctl restart

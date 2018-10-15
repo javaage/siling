@@ -1,0 +1,13 @@
+Device_Status
+
+{ "aggregate" : "device_status", "pipeline" : [{ "$match" : { "Location" : "wmtgy", "end_time" : { "$gt" : { "$numberLong" : "0" } } } }, { "$sort" : { "end_time" : -1 } }, { "$group" : { "_id" : "$Device", "end_time" : { "$first" : "$end_time" }, "status" : { "$first" : "$status" } } }], "cursor" : { "batchSize" : 2147483647 } }
+
+
+Count1
+Count2.1
+Count2.2
+
+Cycle_Time
+Status
+
+psql --no-readline -h 192.168.1.25 -p 8635 "dbname=postgres user=root  sslmode=verify-full sslrootcert=/root/ca.pem"

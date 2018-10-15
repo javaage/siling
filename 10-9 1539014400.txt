@@ -1,0 +1,9 @@
+10-9 1539014400
+
+[
+{ $match : { Location:'xxdz' } },
+{ $group: { _id: null, count: { $sum: 1 } } }
+] 
+
+{ $match : { Location: 'xxdz',update_time: {$gt: 1539014400} } },
+{ $group: { "_id": {Device: "$Device",Parameter:"$Parameter"}, value: { $sum: 1 } } }

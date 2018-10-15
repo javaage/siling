@@ -1,0 +1,645 @@
+> db.var_value.aggregate([{$match:{Location:'wzhc'}},{$group:{_id:"$Parameter"}}])
+{ "_id" : "Count4" }
+{ "_id" : "Count2" }
+> db.var_value.aggregate([{$match:{Location:'jxydz'}},{$group:{_id:"$Parameter"}}])
+{ "_id" : "Process" }
+{ "_id" : "Count2" }
+{ "_id" : "Count4" }
+{ "_id" : "Cycle_Time" }
+{ "_id" : "Count3" }
+
+  // sourceStatus: LocalDataSource = new LocalDataSource();
+  // sourceSum: LocalDataSource = new LocalDataSource();
+  // sourceCount: LocalDataSource = new LocalDataSource();
+
+
+  // public radioGroupForm: FormGroup;
+
+  // dataStatus = [{ id: 'N10201', status: true, end_time: new Date().toLocaleString() },
+  // { id: 'N10212', status: false, end_time: new Date().toLocaleString() },
+  // { id: 'N10213', status: false, end_time: new Date().toLocaleString() },
+  // { id: 'N10214', status: false, end_time: new Date().toLocaleString() },
+  // { id: 'N10215', status: true, end_time: new Date().toLocaleString() },
+  // { id: 'N10216', status: false, end_time: new Date().toLocaleString() },
+  // { id: 'N10217', status: true, end_time: new Date().toLocaleString() },
+  // { id: 'N10218', status: false, end_time: new Date().toLocaleString() },
+  // { id: 'N10219', status: false, end_time: new Date().toLocaleString() }];
+
+  // dataSum = [{ Device: 'N10201', rate: 40, update_time: new Date().toLocaleString() },
+  // { Device: 'N10212', rate: 70, update_time: new Date().toLocaleString() },
+  // { Device: 'N10203', rate: 40, update_time: new Date().toLocaleString() },
+  // { Device: 'N10214', rate: 70, update_time: new Date().toLocaleString() },
+  // { Device: 'N10205', rate: 10, update_time: new Date().toLocaleString() },
+  // { Device: 'N10216', rate: 70, update_time: new Date().toLocaleString() },
+  // { Device: 'N10207', rate: 90, update_time: new Date().toLocaleString() },
+  // { Device: 'N10218', rate: 100, update_time: new Date().toLocaleString() }];
+
+  // dataCount = [{ Device: 'N10201', count: 40, update_time: new Date().toLocaleString() },
+  // { Device: 'N10212', count: 70, update_time: new Date().toLocaleString() },
+  // { Device: 'N10203', count: 40, update_time: new Date().toLocaleString() },
+  // { Device: 'N10214', count: 70, update_time: new Date().toLocaleString() },
+  // { Device: 'N10205', count: 10, update_time: new Date().toLocaleString() },
+  // { Device: 'N10216', count: 70, update_time: new Date().toLocaleString() },
+  // { Device: 'N10207', count: 90, update_time: new Date().toLocaleString() },
+  // { Device: 'N10218', count: 100, update_time: new Date().toLocaleString() }];
+
+  // settingsStatus = {
+  //   actions: {
+  //     add: false,
+  //     edit: false,
+  //     delete: false
+  //   },
+  //   editable: false,
+  //   columns: {
+  //     id: {
+  //       title: '设备编码',
+  //       type: 'string',
+  //       class: 'middle',
+  //     },
+  //     status: {
+  //       title: '状态',
+  //       type: 'custom',
+  //       renderComponent: StatusRenderComponent,
+  //     },
+  //     end_time: {
+  //       title: '更新时间',
+  //       type: 'date',
+  //     }
+  //   },
+  // };
+
+  // settingsSum = {
+  //   actions: {
+  //     add: false,
+  //     edit: false,
+  //     delete: false
+  //   },
+  //   editable: false,
+  //   columns: {
+  //     Device: {
+  //       title: '设备编码',
+  //       type: 'string',
+  //     },
+  //     rate: {
+  //       title: '利用率 （%）',
+  //       type: 'custom',
+  //       renderComponent: ProgressRenderComponent,
+  //     },
+  //     update_time: {
+  //       title: '更新时间',
+  //       type: 'string',
+  //     }
+  //   },
+  // };
+
+  // settingsCount = {
+  //   actions: {
+  //     add: false,
+  //     edit: false,
+  //     delete: false
+  //   },
+  //   editable: false,
+  //   columns: {
+  //     Device: {
+  //       title: '设备编码',
+  //       type: 'string',
+  //     },
+  //     count: {
+  //       title: '产出数量',
+  //       type: 'number',
+  //     },
+  //     update_time: {
+  //       title: '更新时间',
+  //       type: 'string',
+  //     }
+  //   },
+  // };
+
+// reportService.getDeviceListStatus("wmtgy").subscribe(result => {
+    //   this.dataStatus = result.data;
+    //   this.dataStatus.forEach((ele: any) => {
+    //     ele.end_time = this.datePipe.transform(ele.end_time * 1000, 'yyyy-MM-dd hh:mm:ss');
+    //   });
+
+    //   this.sourceStatus.load(this.dataStatus);
+    //   console.log(result);
+    // });
+
+        // this.sourceStatus.load(this.dataStatus);
+    // this.sourceSum.load(this.dataSum);
+    // this.sourceCount.load(this.dataCount);
+
+        // this.radioGroupForm = this.formBuilder.group({
+    //   'model': 1
+    // });
+
+        // this.reportService.getUsers()
+    // .subscribe({
+    //   next: (x)=>{
+    //     console.log('next');
+    //     console.log(x)
+    //   },
+    //   error: (err) => {
+    //     console.log(err)
+    //   },
+    //   complete: () => {
+    //     console.log("complete")
+    //   }
+    // });
+
+    <!--
+  <ng-template ngbSlide>
+    <nb-card>
+      <nb-card-header>
+        设备状态
+      </nb-card-header>
+
+      <nb-card-body>
+        <ng2-smart-table [settings]="settingsStatus" [source]="sourceStatus">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+    <div class="carousel-caption">
+
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <nb-card>
+      <nb-card-header>
+        设备利用率
+      </nb-card-header>
+
+      <nb-card-body>
+        <ng2-smart-table [settings]="settingsSum" [source]="sourceSum">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+    <div class="carousel-caption">
+
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <nb-card>
+      <nb-card-header>
+        设备产出数量
+      </nb-card-header>
+
+      <nb-card-body>
+        <ng2-smart-table [settings]="settingsCount" [source]="sourceCount">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+    <div class="carousel-caption">
+
+    </div>
+  </ng-template>
+  -->
+
+  <form [formGroup]="radioGroupForm" style="display: none;">
+  <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="model">
+    <label ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" [value]="1"> 设备产出状态
+    </label>
+    <label ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" value="2"> 设备运行状态趋势图
+    </label>
+    <label ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" [value]="3"> 人员状态
+    </label>
+  </div>
+</form>
+
+
+errorTimes = [];
+  errorCount = [];
+  errors = [];
+  reportType: any = 0;
+  optionsTimes: any = {};
+  optionsCount: any = {};
+  themeSubscription: any;
+
+  sourceEquipStatus: LocalDataSource = new LocalDataSource();
+  dataEquipStatus = [];
+
+  sourceEmploeeStatus: LocalDataSource = new LocalDataSource();
+  dataEmploeeStatus = [];
+
+  sourcePlanStatus: LocalDataSource = new LocalDataSource();
+  dataPlanStatus = [];
+
+  sourcePassRateStatus: LocalDataSource = new LocalDataSource();
+  dataPassRateStatus = [];
+
+  sourceListStatus: LocalDataSource = new LocalDataSource();
+  dataListStatus = [];
+
+  sourceErrorStatus: LocalDataSource = new LocalDataSource();
+  dataErrorStatus = [];
+
+  settingsEquipStatus = {
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
+    editable: false,
+    columns: {
+      equipName: {
+        title: '设备名称',
+        type: 'string',
+      },
+      code: {
+        title: '设备编码',
+        type: 'string',
+      },
+      totalQuantity: {
+        title: '产出数量',
+        type: 'number',
+      },
+      prodctDesc: {
+        title: '产品名称',
+        type: 'string',
+      }
+    },
+  };
+
+  settingsListStatus = {
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
+    editable: false,
+    columns: {
+      id: {
+        title: '日期',
+        type: 'string',
+      },
+      duration: {
+        title: '生产时间',
+        type: 'number',
+      },
+      percent: {
+        title: '生产时间占比（%）',
+        type: 'custom',
+        renderComponent: ProgressRenderComponent,
+      }
+    },
+  };
+
+  settingsEmploeeStatus = {
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
+    editable: false,
+    columns: {
+      orgName: {
+        title: '班组名称',
+        type: 'string',
+      },
+      name: {
+        title: '员工姓名',
+        type: 'string',
+      },
+      totalQuantity: {
+        title: '产出数量',
+        type: 'number',
+      },
+      prodctDesc: {
+        title: '产品名称',
+        type: 'string',
+      }
+    },
+  };
+
+  settingsPassRateStatus = {
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
+    editable: false,
+    columns: {
+      stime: {
+        title: '日期',
+        type: 'string',
+      },
+      totalqty: {
+        title: '产量',
+        type: 'number',
+      },
+      goodqty: {
+        title: '合格',
+        type: 'number',
+      },
+      badqty: {
+        title: '不合格',
+        type: 'number',
+      },
+      passpersent: {
+        title: '合格率 (%)',
+        type: 'custom',
+        renderComponent: ProgressRenderComponent,
+      }
+    },
+  };
+
+  settingsPlanStatus = {
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
+    editable: false,
+    columns: {
+      planname: {
+        title: '派工单号',
+        type: 'string',
+      },
+      prudect: {
+        title: '产品名称',
+        type: 'string',
+      },
+      plannum: {
+        title: '计划数量',
+        type: 'number',
+      },
+      planendtime: {
+        title: '计划-结束',
+        type: 'string',
+      },
+      overnum: {
+        title: '完成数量',
+        type: 'string',
+      },
+      state: {
+        title: '状态',
+        type: 'string',
+      },
+      expectime: {
+        title: '预计完成',
+        type: 'string',
+      }
+    },
+  };
+
+  settingsErrorStatus = {
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
+    },
+    editable: false,
+    columns: {
+      errorwhy: {
+        title: '异常原因',
+        type: 'string',
+      },
+      committime: {
+        title: '提交时间',
+        type: 'string',
+      },
+      settime: {
+        title: '处理时间（分钟）',
+        type: 'string',
+      },
+      state: {
+        title: '状态',
+        type: 'string',
+      },
+      nowpeople: {
+        title: '当前处理人',
+        type: 'string',
+      }
+    },
+  };
+
+  this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
+
+      const colors: any = config.variables;
+      const chartjs: any = config.variables.chartjs;
+
+      // this.data = {
+      //   labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
+      //   datasets: [{
+      //     data: [300, 500, 100],
+      //     backgroundColor: [colors.primaryLight, colors.infoLight, colors.successLight],
+      //   }],
+      // };
+
+      // this.options = {
+      //   maintainAspectRatio: false,
+      //   responsive: true,
+      //   scales: {
+      //     xAxes: [
+      //       {
+      //         display: false,
+      //       },
+      //     ],
+      //     yAxes: [
+      //       {
+      //         display: false,
+      //       },
+      //     ],
+      //   },
+      //   legend: {
+      //     labels: {
+      //       fontColor: chartjs.textColor,
+      //     },
+      //   },
+      // };
+    });
+
+    // reportService.getEquipStatus(cmpycode).subscribe(result => {
+    //   this.dataEquipStatus = result.data.equipList;
+    //   this.sourceEquipStatus.load(this.dataEquipStatus);
+    // });
+    // this.sourceEquipStatus.load(this.dataEquipStatus);
+
+    // reportService.getDeviceStatusList(cmpycode).subscribe(result => {
+    //   this.dataListStatus = result.data;
+
+    //   this.dataListStatus.forEach(item => {
+    //     let duration = item.duration;
+    //     item.duration = (duration / 3600).toFixed(2);
+    //     item.percent = (duration * 100 / (24 * 3600)).toFixed(2);
+    //   });
+
+    //   this.sourceListStatus.load(this.dataListStatus);
+
+    // });
+    // this.sourceListStatus.load(this.dataListStatus);
+
+    // reportService.getEmploeeStatus(cmpycode).subscribe(result => {
+    //   this.dataEmploeeStatus = result.data.employeeList;
+    //   this.sourceEmploeeStatus.load(this.dataEmploeeStatus);
+
+    // });
+    // this.sourceEmploeeStatus.load(this.dataEmploeeStatus);
+
+    // reportService.getPlanprogress(cmpycode).subscribe(result => {
+    //   this.dataPlanStatus = result.data.list;
+
+    //   this.dataPlanStatus.forEach(item=>{
+    //     if(item.state=='InWorking')
+    //       item.state='生产中'; 
+    //     else if(item.state=='Assigned'){
+    //       item.state='已分配';
+    //     }else if(item.state=='Planing'){
+    //       item.state='计划中'; 
+    //     }
+    //   });
+    //   this.sourcePlanStatus.load(this.dataPlanStatus);
+    // });
+    // this.sourcePlanStatus.load(this.dataPlanStatus);
+
+    // reportService.getPassPercentLastweek(cmpycode).subscribe(result => {
+    //   this.dataPassRateStatus = result.data[0].list;
+    //   this.sourcePassRateStatus.load(this.dataPassRateStatus);
+
+    // });
+    // this.sourcePassRateStatus.load(this.dataPassRateStatus);
+
+    // reportService.getErrorpeo(cmpycode).subscribe(result => {
+    //   result.data.list.forEach(item=>{
+    //     item.settime = (item.settime/60).toFixed(0);
+    //     item.committime = new Date(parseInt(item.committime)*1000).toLocaleDateString();
+    //   })
+
+    //   this.dataErrorStatus = result.data.list;
+    //   this.sourceErrorStatus.load(this.dataErrorStatus);
+    //   console.log(result);
+    // });
+    // this.sourceErrorStatus.load(this.dataErrorStatus);
+
+    // reportService.getErrornopeo(cmpycode).subscribe(result => {
+    //   this.errorTimes = [];
+    //   this.errorCount = [];
+    //   this.errors = [];
+    //   result.data.list.forEach(item=>{
+    //     this.errorTimes.push({name:item.errorwhy,value:(item.settime/60).toFixed(2)});
+    //     this.errorCount.push({name:item.errorwhy,value:item.num});
+    //     this.errors.push(item.errorwhy);
+    //   })
+    // });
+
+    showCharts() {
+    this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
+
+      const colors = config.variables;
+      const echarts: any = config.variables.echarts;
+
+      this.optionsTimes = {
+        backgroundColor: echarts.bg,
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c} 分钟 ({d}%)',
+        },
+        title: {
+          text: '时间统计',
+          left: 'center',
+        },
+        legend: {
+          orient: 'vertical',
+          left: 'left',
+          data: this.errors,
+          textStyle: {
+            color: echarts.textColor,
+          },
+        },
+        series: [
+          {
+            name: '时间',
+            type: 'pie',
+            radius: '80%',
+            center: ['50%', '50%'],
+            data: this.errorTimes,
+            itemStyle: {
+              emphasis: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: echarts.itemHoverShadowColor,
+              },
+            },
+            label: {
+              normal: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
+              },
+            },
+            labelLine: {
+              normal: {
+                lineStyle: {
+                  color: echarts.axisLineColor,
+                },
+              },
+            },
+          },
+        ],
+      };
+
+      this.optionsCount = {
+        backgroundColor: echarts.bg,
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b} : {c} 次数({d}%)',
+        },
+        title: {
+          text: '次数统计',
+          left: 'center'
+        },
+        legend: {
+          orient: 'vertical',
+          left: 'left',
+          data: this.errors,
+          textStyle: {
+            color: echarts.textColor,
+          },
+        },
+        series: [
+          {
+            name: '次数',
+            type: 'pie',
+            radius: '80%',
+            center: ['50%', '50%'],
+            data: this.errorCount,
+            itemStyle: {
+              emphasis: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: echarts.itemHoverShadowColor,
+              },
+            },
+            label: {
+              normal: {
+                textStyle: {
+                  color: echarts.textColor,
+                },
+              },
+            },
+            labelLine: {
+              normal: {
+                lineStyle: {
+                  color: echarts.axisLineColor,
+                },
+              },
+            },
+          },
+        ],
+      };
+    });
+  }
+
+    carouselSlide(ngbSlideEvent) {
+    // this.reportType = ngbSlideEvent.current;
+    // if(this.reportType=='6')
+    //   this.showCharts();
+  }
+
+  import { LocalDataSource } from 'ng2-smart-table';
+import { StatusRenderComponent } from './status-render/status-render.component';
+import { ProgressRenderComponent } from './progress-render/progress-render.component';
+
